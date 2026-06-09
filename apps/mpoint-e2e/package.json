@@ -1,0 +1,26 @@
+{
+  "name": "@mpoint/mpoint-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@mpoint/mpoint"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/mpoint-e2e/jest.config.cts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@mpoint/mpoint:build",
+          "@mpoint/mpoint:serve"
+        ]
+      }
+    }
+  }
+}
